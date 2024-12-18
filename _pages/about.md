@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Natania Wong's homepage"
+title: "Welcome!"
 author_profile: true
 redirect_from: 
   - /about/
