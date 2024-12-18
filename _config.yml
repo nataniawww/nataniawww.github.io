@@ -22,10 +22,10 @@ repository               : "nataniawww/nataniawww.github.io"
 author:
   # Biographic information
   avatar           : "profilepic.jpeg"
-  name             : "Natania Wong"
+ # name             : "Natania Wong"
   pronouns         : # example: "she/her"  
-  bio              : "B.A. Economics"
-  location         : "Earth"
+ # bio              : "B.A. Economics"
+ # location         : "Earth"
   employer         : "University of California, Berkeley"
   uri              : # URL
   email            : "natania.wong@berkeley.edu" 
