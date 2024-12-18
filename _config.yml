@@ -21,11 +21,11 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profilepic.jpeg"
   name             : "Natania Wong"
   pronouns         : # example: "she/her"  
   bio              : "B.A. Economics"
- # location         : "Earth"
+  location         : "Earth"
   employer         : "University of California, Berkeley"
   uri              : # URL
   email            : "natania.wong@berkeley.edu" 
