@@ -1,8 +1,8 @@
 ---
 title: "First-generation Immigrants’ Upward Mobility: Exploring the Effects of Language Spoken At Home using Blinder-Oaxaca Decomposition Method"
-collection: publications
+collection: research
 category: manuscripts
-permalink: /publication/thesis-paper-2024
+permalink: /research/thesis-paper-2024
 excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2024-04-26
 venue: 'Journal 1'
