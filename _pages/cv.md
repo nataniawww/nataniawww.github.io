@@ -11,47 +11,45 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* B.A. in Economics (honors) and Minor in Data Science at University of California, Berkeley, 2024
 
-Work experience
+Professional experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Sept 2024 - Present: Research Assistant, Institute for Research on Labor and Employment (IRLE), Berkeley, CA
+  * Duties include: Worked under Professor Michael Reich and conducted data analysis on the economic impacts of California's $20 minimum wage for fast food workers, utilizing statistical methodologies to assess labor market outcomes and wage dynamics
+  * Analyzed the SHED dataset to explore beneficiaries of racial inequality, explored disparities across income and education
+  * Supervisor: Professor Michael Reich
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Jun 2023 - Nov 2023: Public Policy Intern, San Diego County Taxpayers Association, San Diego, CA
+  * Conduct research and author policy memos concerning municipal structure, homelessness, and government accountability
+  * Showcase adept data analytical skills by sourcing, extracting, cleansing, and mapping data on local tax dollars
+  * Lead communications initiatives and resulting in a 130% increase in the organization’s outreach within a span of 2 months
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Jan 2023 - May 2023: Data Science Researcher, U.S. Arctic Research Commission, Arlington, VA
+  * Conduct Arctic research using Python to identify collaborative projects across all eight Arctic States
+  * Gather data on financial sponsors and stakeholders of US, Russian, and Chinese research partnerships
+  * Prepare detailed reports and presentations summarizing research findings
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Exploratory Data Analysis (EDA)
+* Programming
+  * R (Advanced)
+  * Python (Intermediate)
+  * SQL (Intermediate)
+  * Stata (Beginner)
+  * MATLAB (Intermediate)
+  * LaTeX (Intermediate)
+  * Beautiful Soup
+  * Selenium
+* Microsoft Excel
 
-Publications
+Research Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
+
   
 Teaching
 ======
@@ -59,6 +57,7 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
+Language
 ======
-* Currently signed in to 43 different slack teams
+* Native fluency in Cantonese and Mandarin
+* Conversational in Korean
