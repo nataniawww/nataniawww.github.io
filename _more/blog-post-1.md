@@ -1,5 +1,6 @@
 ---
 title: 'Blog Post number 1'
+collection: more
 date: 2012-08-14
 permalink: /more/blog-post-1/
 tags:
