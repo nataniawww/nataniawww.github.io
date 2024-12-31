@@ -1,6 +1,6 @@
 ---
-title: "Project item number 1"
-excerpt: "Exploratory Data Analysis (EDA) on SHED data<br/><img src='/images/500x300.png'>"
+title: "Exploratory Data Analysis (EDA) on SHED data"
+excerpt: "I explored notable and interesting patterns on SHED data over the last decade, notably measuring retention elasticity by calculating surveyees' responsiveness on wage changes.<br/><img src='/images/500x300.png'>"
 collection: projects
 ---
 
