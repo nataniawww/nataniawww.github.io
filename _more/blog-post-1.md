@@ -1,6 +1,7 @@
 ---
 title: 'Blog Post number 1'
 collection: more
+description: i knit and reviewed books!
 date: 2012-08-14
 permalink: /more/blog-post-1/
 tags:
