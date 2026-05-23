@@ -136,50 +136,6 @@
     .status-wip  { background: #fff8e1; color: #f57f17; }
     .status-queue { background: #e3f2fd; color: #1565c0; }
 
-    /* Add your own photo instructions */
-    .photo-tip {
-      margin-top: 1.5rem;
-      padding: 1rem 1.2rem;
-      background: white;
-      border: 1px dashed var(--rule);
-      border-radius: 3px;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .photo-tip strong { color: var(--ink); }
-
-    /* CURRENTLY section */
-    .currently-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.2rem;
-    }
-    .currently-card {
-      background: white;
-      border: 1px solid var(--rule);
-      border-radius: 3px;
-      padding: 1.2rem 1.4rem;
-    }
-    .currently-label {
-      font-family: var(--mono); font-size: 0.68rem;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--warm); margin-bottom: 0.5rem;
-    }
-    .currently-item { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.2rem; }
-    .currently-sub { font-size: 0.82rem; color: var(--muted); }
-
-    /* FOOTBALL */
-    .football-text { color: #333; font-size: 0.95rem; }
-    .football-text p { margin-bottom: 0.8rem; }
-    .team-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: var(--mono); font-size: 0.8rem;
-      background: white; border: 1px solid var(--rule);
-      padding: 0.4rem 0.9rem; border-radius: 2px;
-      margin-top: 0.5rem;
-    }
 
     footer {
       padding: 2.5rem 0; text-align: center;
@@ -224,10 +180,9 @@
 
   <!-- KNITS -->
   <section id="knits">
-    <h2>🧶 My Knits</h2>
+    <h2>🧶 My Knits & Crochets</h2>
     <p class="knit-intro">
-      I've been knitting since college — it's my favorite way to decompress. Mostly sweaters and accessories.
-      Find me on <a href="#" style="color:var(--accent)">Ravelry</a> for full project notes.
+      Avid knitter (part-time crocheter) since college! Mostly sweaters and accessories.
     </p>
 
     <div class="knit-grid">
@@ -235,12 +190,12 @@
       <!-- CARD 1 — replace knit-placeholder with <img src="knit1.jpg"> -->
       <div class="knit-card">
         <div class="knit-img">
-          <div class="knit-placeholder">🧶</div>
+          <img src="knit1.jpg"></div>
           <!-- <img src="knit1.jpg" alt="Cream ribbed sweater"> -->
         </div>
         <div class="knit-info">
-          <div class="knit-name">Cream Ribbed Pullover</div>
-          <div class="knit-detail">Merino wool · Size S</div>
+          <div class="knit-name">Crochet Handbag</div>
+          <div class="knit-detail">Cotton · Granny Squares</div>
           <div class="knit-status status-done">Finished</div>
         </div>
       </div>
@@ -248,12 +203,12 @@
       <!-- CARD 2 -->
       <div class="knit-card">
         <div class="knit-img">
-          <div class="knit-placeholder">🧤</div>
+          <img src="knit2.jpg"></div>
           <!-- <img src="knit2.jpg" alt="Colorwork mittens"> -->
         </div>
         <div class="knit-info">
-          <div class="knit-name">Colorwork Mittens</div>
-          <div class="knit-detail">Cascade 220 · Fair Isle</div>
+          <div class="knit-name">Moomin Sweater</div>
+          <div class="knit-detail"> · Size S</div>
           <div class="knit-status status-done">Finished</div>
         </div>
       </div>
@@ -261,77 +216,38 @@
       <!-- CARD 3 — WIP -->
       <div class="knit-card">
         <div class="knit-img">
-          <div class="knit-placeholder">🧣</div>
+          <img src="knit3.jpg"></div>
           <!-- <img src="knit3.jpg" alt="Striped scarf in progress"> -->
         </div>
         <div class="knit-info">
           <div class="knit-name">Striped Garter Scarf</div>
           <div class="knit-detail">Chunky wool · 3 colors</div>
-          <div class="knit-status status-wip">In progress</div>
+          <div class="knit-status status-done">Finished</div>
         </div>
       </div>
 
       <!-- CARD 4 — Queue -->
       <div class="knit-card">
         <div class="knit-img">
-          <div class="knit-placeholder">🪡</div>
+          <img src="knit4.jpg"></div>
           <!-- <img src="knit4.jpg" alt="Planned cardigan"> -->
         </div>
         <div class="knit-info">
           <div class="knit-name">Linen Stitch Cardigan</div>
           <div class="knit-detail">Cotton blend · Natural</div>
-          <div class="knit-status status-queue">In queue</div>
+          <div class="knit-status status-queue">Finished</div>
         </div>
       </div>
 
     </div>
 
-    <div class="photo-tip">
-      <strong>To add your real photos:</strong> save your images (e.g. <code>knit1.jpg</code>) in the same folder as this file,
-      then replace each <code>&lt;div class="knit-placeholder"&gt;</code> block with
-      <code>&lt;img src="knit1.jpg" alt="description"&gt;</code> and update the name/detail text.
-    </div>
-  </section>
-
-  <!-- CURRENTLY -->
-  <section id="currently">
-    <h2>✦ Currently</h2>
-    <div class="currently-grid">
-
-      <div class="currently-card">
-        <div class="currently-label">📖 Reading</div>
-        <div class="currently-item">Add your current book</div>
-        <div class="currently-sub">Author Name</div>
-      </div>
-
-      <div class="currently-card">
-        <div class="currently-label">🧶 Knitting</div>
-        <div class="currently-item">Striped Garter Scarf</div>
-        <div class="currently-sub">Row 42 of 120</div>
-      </div>
-
-      <div class="currently-card">
-        <div class="currently-label">📺 Watching</div>
-        <div class="currently-item">Premier League 2024/25</div>
-        <div class="currently-sub">Every weekend, religiously</div>
-      </div>
-
-      <div class="currently-card">
-        <div class="currently-label">🎵 Listening</div>
-        <div class="currently-item">Add your current album</div>
-        <div class="currently-sub">Artist Name</div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- BOOKS -->
   <section id="books">
     <h2>📚 Books</h2>
     <div class="football-text">
       <p>
-        I read widely — economics, fiction, history, and the occasional pop-science book.
-        My full reading log lives on Goodreads.
+        I read mostly Chinese non-fiction book!
       </p>
       <a href="https://www.goodreads.com/user/show/91863962-natania"
          target="_blank"
@@ -343,20 +259,6 @@
     </div>
   </section>
 
-  <!-- FOOTBALL -->
-  <section id="football">
-    <h2>⚽ Premier League</h2>
-    <div class="football-text">
-      <p>
-        Weekend mornings during the season are sacred. I follow the Premier League closely —
-        the tactics, the transfer drama, all of it.
-      </p>
-      <p>My team:</p>
-      <div class="team-badge">⚽ Add your team here</div>
-    </div>
-  </section>
-
-</div>
 
 <footer>
   <div class="page">
