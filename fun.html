@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fun · Natania Wong</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --paper: #f5f2eb;
+      --accent: #114971;
+      --muted: #7a7568;
+      --rule: #d8d4cb;
+      --warm: #c9a96e;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .page { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      padding: 1rem 0;
+    }
+    nav .inner {
+      max-width: 780px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-name {
+      font-family: var(--serif); font-size: 1.1rem;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--muted); text-decoration: none;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.active { color: var(--accent); }
+
+    /* PAGE HEADER */
+    .fun-header {
+      padding: 5rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .fun-header .eyebrow {
+      font-family: var(--mono); font-size: 0.75rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--warm); margin-bottom: 1rem;
+    }
+    .fun-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .fun-header .subtitle {
+      color: var(--muted); font-size: 1rem; max-width: 500px;
+    }
+
+    /* SECTIONS */
+    section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+    section:last-child { border-bottom: none; }
+    h2 {
+      font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+      margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.75rem;
+    }
+    h2::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+    /* KNITS GRID */
+    .knit-intro { color: #333; margin-bottom: 1.8rem; font-size: 0.95rem; }
+    .knit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .knit-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .knit-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .knit-img {
+      width: 100%; aspect-ratio: 1;
+      background: var(--rule);
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .knit-img img { width: 100%; height: 100%; object-fit: cover; }
+    /* Placeholder yarn illustration */
+    .knit-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #f0ebe0, #e8dfd0);
+    }
+    .knit-info { padding: 0.8rem 1rem; }
+    .knit-name {
+      font-weight: 500; font-size: 0.88rem; margin-bottom: 0.2rem;
+    }
+    .knit-detail {
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--muted); letter-spacing: 0.02em;
+    }
+    .knit-status {
+      display: inline-block;
+      font-family: var(--mono); font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 0.15rem 0.5rem; border-radius: 2px;
+      margin-top: 0.4rem;
+    }
+    .status-done { background: #e8f5e9; color: #2e7d32; }
+    .status-wip  { background: #fff8e1; color: #f57f17; }
+    .status-queue { background: #e3f2fd; color: #1565c0; }
+
+    /* Add your own photo instructions */
+    .photo-tip {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      background: white;
+      border: 1px dashed var(--rule);
+      border-radius: 3px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .photo-tip strong { color: var(--ink); }
+
+    /* CURRENTLY section */
+    .currently-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .currently-card {
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 1.2rem 1.4rem;
+    }
+    .currently-label {
+      font-family: var(--mono); font-size: 0.68rem;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--warm); margin-bottom: 0.5rem;
+    }
+    .currently-item { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.2rem; }
+    .currently-sub { font-size: 0.82rem; color: var(--muted); }
+
+    /* FOOTBALL */
+    .football-text { color: #333; font-size: 0.95rem; }
+    .football-text p { margin-bottom: 0.8rem; }
+    .team-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 0.8rem;
+      background: white; border: 1px solid var(--rule);
+      padding: 0.4rem 0.9rem; border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      padding: 2.5rem 0; text-align: center;
+      font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fun-header { animation: fadeUp 0.6s ease both; }
+    section { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 1.2rem; }
+      .knit-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="nav-name" href="index.html">Natania Wong</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#publications">Papers</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="fun.html" class="active">✦ Fun</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="fun-header">
+    <p class="eyebrow">Beyond the research</p>
+    <h1>The Fun<br><em>Stuff</em></h1>
+    <p class="subtitle">Knitting, books, football, and other things that keep me sane between regressions.</p>
+  </div>
+
+  <!-- KNITS -->
+  <section id="knits">
+    <h2>🧶 My Knits</h2>
+    <p class="knit-intro">
+      I've been knitting since college — it's my favorite way to decompress. Mostly sweaters and accessories.
+      Find me on <a href="#" style="color:var(--accent)">Ravelry</a> for full project notes.
+    </p>
+
+    <div class="knit-grid">
+
+      <!-- CARD 1 — replace knit-placeholder with <img src="knit1.jpg"> -->
+      <div class="knit-card">
+        <div class="knit-img">
+          <div class="knit-placeholder">🧶</div>
+          <!-- <img src="knit1.jpg" alt="Cream ribbed sweater"> -->
+        </div>
+        <div class="knit-info">
+          <div class="knit-name">Cream Ribbed Pullover</div>
+          <div class="knit-detail">Merino wool · Size S</div>
+          <div class="knit-status status-done">Finished</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="knit-card">
+        <div class="knit-img">
+          <div class="knit-placeholder">🧤</div>
+          <!-- <img src="knit2.jpg" alt="Colorwork mittens"> -->
+        </div>
+        <div class="knit-info">
+          <div class="knit-name">Colorwork Mittens</div>
+          <div class="knit-detail">Cascade 220 · Fair Isle</div>
+          <div class="knit-status status-done">Finished</div>
+        </div>
+      </div>
+
+      <!-- CARD 3 — WIP -->
+      <div class="knit-card">
+        <div class="knit-img">
+          <div class="knit-placeholder">🧣</div>
+          <!-- <img src="knit3.jpg" alt="Striped scarf in progress"> -->
+        </div>
+        <div class="knit-info">
+          <div class="knit-name">Striped Garter Scarf</div>
+          <div class="knit-detail">Chunky wool · 3 colors</div>
+          <div class="knit-status status-wip">In progress</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 — Queue -->
+      <div class="knit-card">
+        <div class="knit-img">
+          <div class="knit-placeholder">🪡</div>
+          <!-- <img src="knit4.jpg" alt="Planned cardigan"> -->
+        </div>
+        <div class="knit-info">
+          <div class="knit-name">Linen Stitch Cardigan</div>
+          <div class="knit-detail">Cotton blend · Natural</div>
+          <div class="knit-status status-queue">In queue</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="photo-tip">
+      <strong>To add your real photos:</strong> save your images (e.g. <code>knit1.jpg</code>) in the same folder as this file,
+      then replace each <code>&lt;div class="knit-placeholder"&gt;</code> block with
+      <code>&lt;img src="knit1.jpg" alt="description"&gt;</code> and update the name/detail text.
+    </div>
+  </section>
+
+  <!-- CURRENTLY -->
+  <section id="currently">
+    <h2>✦ Currently</h2>
+    <div class="currently-grid">
+
+      <div class="currently-card">
+        <div class="currently-label">📖 Reading</div>
+        <div class="currently-item">Add your current book</div>
+        <div class="currently-sub">Author Name</div>
+      </div>
+
+      <div class="currently-card">
+        <div class="currently-label">🧶 Knitting</div>
+        <div class="currently-item">Striped Garter Scarf</div>
+        <div class="currently-sub">Row 42 of 120</div>
+      </div>
+
+      <div class="currently-card">
+        <div class="currently-label">📺 Watching</div>
+        <div class="currently-item">Premier League 2024/25</div>
+        <div class="currently-sub">Every weekend, religiously</div>
+      </div>
+
+      <div class="currently-card">
+        <div class="currently-label">🎵 Listening</div>
+        <div class="currently-item">Add your current album</div>
+        <div class="currently-sub">Artist Name</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books">
+    <h2>📚 Books</h2>
+    <div class="football-text">
+      <p>
+        I read widely — economics, fiction, history, and the occasional pop-science book.
+        My full reading log lives on Goodreads.
+      </p>
+      <a href="https://www.goodreads.com/user/show/91863962-natania"
+         target="_blank"
+         style="display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.78rem;color:var(--ink);text-decoration:none;border:1px solid var(--rule);padding:0.4rem 0.9rem;border-radius:2px;transition:border-color 0.2s,color 0.2s;"
+         onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'"
+         onmouseout="this.style.borderColor='var(--rule)';this.style.color='var(--ink)'">
+        → View my Goodreads shelf
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTBALL -->
+  <section id="football">
+    <h2>⚽ Premier League</h2>
+    <div class="football-text">
+      <p>
+        Weekend mornings during the season are sacred. I follow the Premier League closely —
+        the tactics, the transfer drama, all of it.
+      </p>
+      <p>My team:</p>
+      <div class="team-badge">⚽ Add your team here</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="page">
+    <a href="index.html" style="color:inherit">← Back to research</a>
+    &nbsp;·&nbsp; Last updated May 2026
+  </div>
+</footer>
+
+</body>
+</html>
