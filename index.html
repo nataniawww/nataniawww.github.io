@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Natania Wong · Stanford Digital Economy Lab</title>
+  <title>Natania Wong</title>
   <meta name="description" content="Natania Wong is a Predoctoral Research Fellow at the Stanford Digital Economy Lab studying how generative AI is reshaping the labor market.">
   <link rel="canonical" href="https://nataniawww.github.io/">
 
-  <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Natania Wong">
   <meta property="og:description" content="Predoctoral Research Fellow at the Stanford Digital Economy Lab studying AI and the labor market.">
@@ -15,185 +14,193 @@
   <meta property="og:image" content="https://nataniawww.github.io/assets/img/headshot.jpg">
   <meta name="twitter:card" content="summary">
 
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      var t; try { t = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- Icon set: reference with <svg><use href="#i-name"/></svg> -->
+<!-- Icons: use with <svg><use href="#i-name"/></svg> -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
-  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
-  <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
-  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+  <defs>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </defs>
 </svg>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="site-nav" aria-label="Main">
-  <div class="container">
-    <a class="brand" href="index.html"><span class="brand-full">Natania Wong</span><span class="brand-short">NW</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a class="nav-pill" href="fun.html">Fun</a></li>
-    </ul>
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">Natania Wong</a>
+    <div class="nav-menu">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="off-the-clock.html">Off the Clock</a></li>
+        <li><a href="files/Resume_NataniaWong_2026_public.pdf">CV</a></li>
+      </ul>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <button class="icon-btn menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
   </div>
 </nav>
 
-<main id="main" class="container">
+<main id="main">
 
   <!-- ================= HERO ================= -->
-  <header class="hero">
+  <header class="container hero">
     <div class="reveal">
-      <p class="eyebrow">Predoctoral Research Fellow · Stanford</p>
-      <h1>Natania <em>Wong</em></h1>
+      <h1>Natania Wong</h1>
+      <p class="rotator" aria-hidden="true">I study how generative AI is reshaping
+        <span data-rotate="the labor market.|task and skill demand.|wages and earnings.|where and how we work.">the labor market.</span><span class="caret"></span>
+      </p>
+      <p class="sr-only">I study how generative AI is reshaping the labor market.</p>
       <p class="lead">
-        I'm a Predoctoral Research Fellow at the Stanford Digital Economy Lab, where I work with
+        Predoctoral Research Fellow at the Stanford Digital Economy Lab, Stanford HAI and SIEPR, working with
         <a href="https://digitaleconomy.stanford.edu/people/erik-brynjolfsson/">Erik Brynjolfsson</a> and
         <a href="https://digitaleconomy.stanford.edu/people/sarah-bana/">Sarah Bana</a>.
-        I study how generative AI is reshaping the labor market.
-      </p>
-      <p class="affiliations">
-        <a href="https://digitaleconomy.stanford.edu/">Digital Economy Lab</a><span class="sep">·</span><a href="https://hai.stanford.edu/">Stanford HAI</a><span class="sep">·</span><a href="https://siepr.stanford.edu/">SIEPR</a>
       </p>
       <div class="btn-row">
         <a class="btn btn-primary" href="mailto:nataniaw@stanford.edu"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+        <a class="btn" href="files/Resume_NataniaWong_2026_public.pdf"><svg aria-hidden="true"><use href="#i-file"/></svg>CV</a>
         <a class="btn" href="https://www.linkedin.com/in/natania-wong-496703186/"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
         <a class="btn" href="https://github.com/nataniawww"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
-        <!-- To add your CV: put the PDF at files/cv.pdf, then uncomment this line.
-        <a class="btn" href="files/cv.pdf"><svg aria-hidden="true"><use href="#i-file"/></svg>CV</a>
-        -->
-        <!-- To add Google Scholar once you have a profile: replace the URL and uncomment.
-        <a class="btn" href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
-        -->
       </div>
     </div>
-    <div class="portrait reveal reveal-2">
+    <div class="portrait reveal">
       <img src="assets/img/headshot.jpg" alt="Portrait of Natania Wong" width="960" height="1200">
     </div>
   </header>
 
   <!-- ================= ABOUT ================= -->
-  <section id="about" class="section reveal reveal-3">
-    <h2 class="section-title">About</h2>
-    <div class="section-body">
-      <p>
-        My research examines how the rapid adoption of generative AI is reshaping work, from shifts in
-        skill demand and changes in employment and earnings to the evolving nature of where and how people
-        work. I'm especially interested in who benefits, who is left behind, and how policy can support
-        workers through periods of technological change.
-      </p>
-      <p>
-        I graduated with honors from the University of California, Berkeley, with a degree in Economics
-        and a minor in Data Science. Before Stanford, I was a research assistant for
-        <a href="https://irle.berkeley.edu/people/michael-reich/">Professor Michael Reich</a> at Berkeley's
-        Institute for Research on Labor and Employment (IRLE), studying the effects of minimum wage policy.
-        Earlier, I wrote my senior honors thesis on the social mobility of first-generation immigrants using a
-        Blinder–Oaxaca decomposition, and worked on local policy research at the San Diego County
-        Taxpayers Association.
-      </p>
-      <p>
-        Outside of research, I'm probably knitting, reading, or watching the Premier League. You can find
-        my book reviews on <a href="https://www.goodreads.com/user/show/91863962-natania">Goodreads</a> and
-        my knits on the <a href="fun.html">fun page&nbsp;→</a>
-      </p>
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="reveal">About</h2>
+      <div class="about reveal">
+        <div class="prose">
+          <p>
+            My research examines how the rapid adoption of generative AI is reshaping work, from shifts in skill
+            demand and changes in employment and earnings to the evolving nature of where and how people work.
+            I am especially interested in who benefits, who is left behind, and how policy can support workers
+            through periods of technological change.
+          </p>
+          <p>
+            I graduated from UC Berkeley in 2024 with a B.A. in Economics (with Honors) and a minor in Data Science.
+            Before Stanford, I was a research assistant for
+            <a href="https://irle.berkeley.edu/people/michael-reich/">Michael Reich</a> at Berkeley's Institute for
+            Research on Labor and Employment, studying California's $20 fast-food minimum wage. My senior honors
+            thesis examined how the language spoken at home affects immigrants' wages and social mobility.
+          </p>
+          <p>
+            Outside of research, I am probably knitting or reading
+            (<a href="https://www.goodreads.com/user/show/91863962-natania">Goodreads</a>). Check out my knits on <a href="off-the-clock.html">Off the Clock</a>.
+          </p>
+        </div>
+        <dl class="facts">
+          <div><dt>Interests</dt><dd>Labor economics, public economics, AI and economics, machine learning in economics</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
-  <!-- ================= RESEARCH ================= -->
+  <!-- ================= RESEARCH / PROJECTS ================= -->
   <section id="research" class="section">
-    <h2 class="section-title">Research</h2>
-    <div class="section-body">
-      <ul class="tags" aria-label="Research interests">
-        <li class="tag">Labor Economics</li>
-        <li class="tag">Public Economics</li>
-        <li class="tag">AI and Economics</li>
-        <li class="tag">Machine Learning in Economics</li>
-      </ul>
+    <div class="container">
+      <h2 class="reveal">Research &amp; projects</h2>
 
-      <!-- When you have papers, replace this note with a list, e.g.:
-      <ul class="timeline">
-        <li class="timeline-item">
-          <div>
-            <div class="timeline-role">Paper title</div>
-            <div class="timeline-org">with Coauthor Name · <a href="files/paper.pdf">PDF</a></div>
+      <!--
+        ============ EDIT RESEARCH & PROJECT CARDS HERE ============
+        Each card is one <li class="project"> block. To add a project, copy a whole block.
+        When a paper, prototype or repo is ready: uncomment the "project-links" block in that card,
+        put in the real link(s), and delete any you don't need.
+        Remove <span class="status">Ongoing</span> once a project is finished.
+      -->
+      <ul class="projects reveal">
+        <li class="project">
+          <div class="project-title"><h3>Generative AI and the value of work activities</h3><span class="status">Ongoing</span></div>
+          <p class="project-org">Stanford Digital Economy Lab · 2025 – now</p>
+          <p class="project-desc">
+            <!-- How have the wage returns to specific workplace activities shifted since generative AI spread? I link job
+            postings to payroll microdata, map posting text onto O*NET work activities with LLM-based classification,
+            and estimate fixed-effects and difference-in-differences models. -->
+          </p>
+          <!--
+          <div class="project-links">
+            <a href="files/PAPER.pdf">Paper</a>
+            <a href="https://github.com/nataniawww/REPO">GitHub</a>
           </div>
-          <div class="timeline-date">2026</div>
+          -->
+        </li>
+
+        <li class="project">
+          <div class="project-title"><h3>Evaluation tooling for research pipelines</h3><span class="status">Ongoing</span></div>
+          <p class="project-org">Stanford Digital Economy Lab · 2025 – now</p>
+          <p class="project-desc">
+            <!-- Human-labeled ground-truth benchmarks and automated HTML review and reporting interfaces that the research
+            team uses to validate pipeline output, triage findings and track results across batches. -->
+          </p>
+          <!--
+          <div class="project-links">
+            <a href="https://PROTOTYPE-LINK">Prototype</a>
+            <a href="https://github.com/nataniawww/REPO">GitHub</a>
+          </div>
+          -->
         </li>
       </ul>
-      -->
-      <div class="note">
-        <span class="eyebrow">Work in progress</span>
-        <p>Working papers coming soon.</p>
-      </div>
+      <p class="note">Papers, prototypes and code will be linked here as they're ready.</p>
     </div>
   </section>
 
   <!-- ================= EXPERIENCE ================= -->
   <section id="experience" class="section">
-    <h2 class="section-title">Experience</h2>
-    <div class="section-body">
-      <ul class="timeline">
-        <li class="timeline-item">
-          <div>
-            <div class="timeline-role">Predoctoral Research Fellow</div>
-            <div class="timeline-org">Stanford Digital Economy Lab · HAI · SIEPR</div>
-          </div>
-          <div class="timeline-date">2025 – Present</div>
+    <div class="container">
+      <h2 class="reveal">Experience</h2>
+      <!-- To add a role: copy one <li class="tl-item"> block. Newest first. -->
+      <ol class="timeline reveal">
+        <li class="tl-item">
+          <div class="tl-head"><h3>Predoctoral Research Fellow</h3><span class="tl-date">Jul 2025 – Present</span></div>
+          <p class="tl-org">Stanford Digital Economy Lab · HAI · SIEPR</p>
+          <p class="tl-desc">PI: Erik Brynjolfsson.<br>Data pipelines, LLM-based classification and causal estimates of how generative AI is changing the value of work.</p>
         </li>
-        <li class="timeline-item">
-          <div>
-            <div class="timeline-role">Research Assistant</div>
-            <div class="timeline-org">Institute for Research on Labor and Employment, UC Berkeley</div>
-          </div>
-          <div class="timeline-date">Sep 2024 – Jun 2025</div>
+        <li class="tl-item">
+          <div class="tl-head"><h3>Research Assistant</h3><span class="tl-date">Sep 2024 – Jul 2025</span></div>
+          <p class="tl-org">Institute for Research on Labor and Employment, UC Berkeley</p>
+          <p class="tl-desc">PI: Michael Reich.<br>California's $20 fast-food minimum wage, and income and education disparities in the Federal Reserve's SHED survey.</p>
         </li>
-        <li class="timeline-item">
-          <div>
-            <div class="timeline-role">Policy Analyst Intern</div>
-            <div class="timeline-org"><a href="https://sdtaxpayers.org/">San Diego County Taxpayers Association</a></div>
-          </div>
-          <div class="timeline-date">Summer 2024</div>
+        <li class="tl-item">
+          <div class="tl-head"><h3>B.A. Economics (Honors), Minor in Data Science</h3><span class="tl-date">May 2024</span></div>
+          <p class="tl-org">University of California, Berkeley</p>
+          <p class="tl-desc">General Distinction. Senior honors thesis on language at home and immigrant mobility; Boskin Scholarship.</p>
         </li>
-        <li class="timeline-item">
-          <div>
-            <div class="timeline-role">Teaching Assistant, Introduction to Statistics</div>
-            <div class="timeline-org">Department of Statistics, UC Berkeley</div>
-          </div>
-          <div class="timeline-date">Fall 2022 – Spring 2023</div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ================= EDUCATION ================= -->
-  <section id="education" class="section">
-    <h2 class="section-title">Education</h2>
-    <div class="section-body">
-      <ul class="timeline">
-        <li class="timeline-item">
-          <div>
-            <div class="timeline-role">B.A. Economics with Honors, Minor in Data Science</div>
-            <div class="timeline-org">University of California, Berkeley</div>
-          </div>
-          <div class="timeline-date">2024</div>
-          <p class="timeline-desc">
-            Honors thesis: social mobility of first-generation immigrants, using a Blinder–Oaxaca decomposition.
-          </p>
-        </li>
-      </ul>
+      </ol>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-inner">
     <span>© 2026 Natania Wong · Last updated November 2026</span>
     <ul class="footer-links">
       <li><a href="mailto:nataniaw@stanford.edu">Email</a></li>
@@ -203,5 +210,6 @@
   </div>
 </footer>
 
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
