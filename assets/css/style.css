@@ -89,8 +89,13 @@ h1, h2, h3 { color: var(--ink); font-weight: 600; letter-spacing: -.02em; line-h
 .site-nav.is-scrolled, .site-nav.is-open { border-bottom-color: var(--line); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
 
-.brand { font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -.015em; }
-.brand:hover { color: var(--ink); }
+/* "NW." logo: set in the site font, with a navy period like the typing headline */
+.brand {
+  font-weight: 600; font-size: 1.4rem; line-height: 1; letter-spacing: -.06em;
+  color: var(--ink); text-decoration: none;
+}
+.brand:hover { color: var(--accent); }
+.brand-dot { color: var(--accent); }
 
 .nav-menu { display: flex; align-items: center; gap: .25rem; }
 .nav-links { display: flex; gap: .1rem; list-style: none; }
