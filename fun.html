@@ -1,282 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fun · Natania Wong</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #1a1a18;
-      --paper: #f5f2eb;
-      --accent: #114971;
-      --muted: #7a7568;
-      --rule: #d8d4cb;
-      --warm: #c9a96e;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-      --mono: 'DM Mono', monospace;
-    }
+  <meta name="description" content="Knits, crochets and books: what Natania Wong does outside of research.">
+  <link rel="canonical" href="https://nataniawww.github.io/fun.html">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-      font-size: 16px;
-    }
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Fun Stuff · Natania Wong">
+  <meta property="og:description" content="Knits, crochets and books.">
+  <meta property="og:url" content="https://nataniawww.github.io/fun.html">
+  <meta property="og:image" content="https://nataniawww.github.io/assets/img/knits/elizabeth-blouse.jpg">
 
-    .page { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--paper);
-      border-bottom: 1px solid var(--rule);
-      padding: 1rem 0;
-    }
-    nav .inner {
-      max-width: 780px; margin: 0 auto; padding: 0 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .nav-name {
-      font-family: var(--serif); font-size: 1.1rem;
-      color: var(--ink); text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--muted); text-decoration: none;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-links a.active { color: var(--accent); }
-
-    /* PAGE HEADER */
-    .fun-header {
-      padding: 5rem 0 3rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .fun-header .eyebrow {
-      font-family: var(--mono); font-size: 0.75rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--warm); margin-bottom: 1rem;
-    }
-    .fun-header h1 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 400; line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .fun-header .subtitle {
-      color: var(--muted); font-size: 1rem; max-width: 500px;
-    }
-
-    /* SECTIONS */
-    section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
-    section:last-child { border-bottom: none; }
-    h2 {
-      font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
-      margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.75rem;
-    }
-    h2::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-
-    /* KNITS GRID */
-    .knit-intro { color: #333; margin-bottom: 1.8rem; font-size: 0.95rem; }
-    .knit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .knit-card {
-      background: white;
-      border: 1px solid var(--rule);
-      border-radius: 3px;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .knit-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-    .knit-img {
-      width: 100%; aspect-ratio: 1;
-      background: var(--rule);
-      overflow: hidden;
-      display: block; align-items: center; justify-content: center;
-    }
-    .knit-img img { width: 100%; height: 100%; object-fit: cover; }
-    /* Placeholder yarn illustration */
-    .knit-placeholder {
-      width: 100%; height: 100%;
-      display: block; align-items: center; justify-content: center;
-      font-size: 2.5rem;
-      background: linear-gradient(135deg, #f0ebe0, #e8dfd0);
-    }
-    .knit-info { padding: 0.8rem 1rem; }
-    .knit-name {
-      font-weight: 500; font-size: 0.88rem; margin-bottom: 0.2rem;
-    }
-    .knit-detail {
-      font-family: var(--mono); font-size: 0.72rem;
-      color: var(--muted); letter-spacing: 0.02em;
-    }
-    .knit-status {
-      display: inline-block;
-      font-family: var(--mono); font-size: 0.65rem;
-      text-transform: uppercase; letter-spacing: 0.06em;
-      padding: 0.15rem 0.5rem; border-radius: 2px;
-      margin-top: 0.4rem;
-    }
-    .status-done { background: #e8f5e9; color: #2e7d32; }
-    .status-wip  { background: #fff8e1; color: #f57f17; }
-    .status-queue { background: #e3f2fd; color: #1565c0; }
-
-
-    footer {
-      padding: 2.5rem 0; text-align: center;
-      font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fun-header { animation: fadeUp 0.6s ease both; }
-    section { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
-
-    @media (max-width: 600px) {
-      .nav-links { gap: 1.2rem; }
-      .knit-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-  </style>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<nav>
-  <div class="inner">
-    <a class="nav-name" href="index.html">Natania Wong</a>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="brand-full">Natania Wong</span><span class="brand-short">NW</span></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Papers</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="fun.html" class="fun-link">Fun stuffs!</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a class="nav-pill" href="fun.html" aria-current="page">Fun</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="page">
+<main id="main" class="container">
 
-  <div class="fun-header">
-    <h1>The Fun<br><em>Stuff</em></h1>
-    <p class="subtitle">I make my own sweaters!</p>
-  </div>
+  <header class="page-header reveal">
+    <p class="eyebrow">Beyond research</p>
+    <h1>The fun <em>stuff</em></h1>
+    <p class="lead">I make my own sweaters! Here's what's been on my needles and on my bookshelf.</p>
+  </header>
 
-  <!-- KNITS -->
-  <section id="knits">
-    <h2>🧶 My Knits & Crochets</h2>
-    <p class="knit-intro">
-      Avid knitter (part-time crocheter) since college! Mostly sweaters and accessories.
-    </p>
-
-    <div class="knit-grid">
-
-      <!-- CARD 1 -->
-      <div class="knit-card">
-        <div class="knit-img">
-          <img src="knit1.jpg">
-          <!-- <img src="knit1.jpg" alt="Cream ribbed sweater"> -->
-        </div>
-        <div class="knit-info">
-          <div class="knit-name">Crochet Handbag</div>
-          <div class="knit-detail">Cotton · Granny Squares</div>
-          <div class="knit-status status-done">Finished</div>
-        </div>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="knit-card">
-        <div class="knit-img">
-          <img src="knit2.jpg">
-          <!-- <img src="knit2.jpg" alt="Colorwork mittens"> -->
-        </div>
-        <div class="knit-info">
-          <div class="knit-name">Moomin Sweater</div>
-          <div class="knit-detail"> · Size S</div>
-          <div class="knit-status status-done">Finished</div>
-        </div>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="knit-card">
-        <div class="knit-img">
-          <img src="knit3.jpg">
-          <!-- <img src="knit3.jpg" alt="Striped scarf in progress"> -->
-        </div>
-        <div class="knit-info">
-          <div class="knit-name">Elizabeth Blouse</div>
-          <div class="knit-detail">Chunky wool · Size S</div>
-          <div class="knit-status status-done">Finished</div>
-        </div>
-      </div>
-
-      <!-- CARD 4 -->
-      <div class="knit-card">
-        <div class="knit-img">
-          <img src="knit4.jpg">
-          <!-- <img src="knit4.jpg" alt="Planned cardigan"> -->
-        </div>
-        <div class="knit-info">
-          <div class="knit-name">Crochet Crossbag</div>
-          <div class="knit-detail">Cotton blend · 2 color</div>
-          <div class="knit-status status-done">Finished</div>
-        </div>
-      </div>
-
-      <!-- CARD 4
-      <div class="knit-card">
-        <div class="knit-img">
-          <img src="knit4.jpg">
-        </div>
-        <div class="knit-info">
-          <div class="knit-name">Crochet Crossbag</div>
-          <div class="knit-detail">Cotton blend · 2 color</div>
-          <div class="knit-status status-wip">WIP</div>
-        </div>
-      </div> 
-
-    </div> -->
-
-
-  <!-- BOOKS -->
-  <section id="books">
-    <h2>📚 Books</h2>
-    <div class="football-text">
-      <p>
-        I read mostly Chinese non-fiction books! 
+  <!-- ================= KNITS ================= -->
+  <section id="knits" class="section section-stacked reveal reveal-2">
+    <h2 class="section-title">Knits &amp; Crochets</h2>
+    <div>
+      <p class="section-body">
+        An avid knitter (and part-time crocheter) since college, mostly making sweaters and accessories.
       </p>
-      <a href="https://www.goodreads.com/user/show/91863962-natania"
-         target="_blank"
-         style="display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.78rem;color:var(--ink);text-decoration:none;border:1px solid var(--rule);padding:0.4rem 0.9rem;border-radius:2px;transition:border-color 0.2s,color 0.2s;"
-         onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'"
-         onmouseout="this.style.borderColor='var(--rule)';this.style.color='var(--ink)'">
-        → Read my reviews
-      </a>
+
+      <!--
+        To add a project: resize the photo (about 720px wide), save it in assets/img/knits/,
+        then copy one <li> block below and change the image path, name and details.
+      -->
+      <ul class="gallery">
+        <li class="gallery-card">
+          <div class="gallery-photo">
+            <img src="assets/img/knits/crochet-handbag.jpg" alt="Cream crochet handbag made of granny squares" width="705" height="960" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-kind">Crochet</span>
+            <h3 class="gallery-name">Crochet Handbag</h3>
+            <p class="gallery-detail">Cotton · Granny squares</p>
+          </div>
+        </li>
+
+        <li class="gallery-card">
+          <div class="gallery-photo">
+            <img src="assets/img/knits/moomin-sweater.jpg" alt="Light blue knit sweater with a white Moomin motif" width="720" height="960" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-kind">Knit</span>
+            <h3 class="gallery-name">Moomin Sweater</h3>
+            <p class="gallery-detail">Size S</p>
+          </div>
+        </li>
+
+        <li class="gallery-card">
+          <div class="gallery-photo">
+            <img src="assets/img/knits/elizabeth-blouse.jpg" alt="Blue collared knit sweater, worn" width="720" height="960" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-kind">Knit</span>
+            <h3 class="gallery-name">Elizabeth Blouse</h3>
+            <p class="gallery-detail">Chunky wool · Size S</p>
+          </div>
+        </li>
+
+        <li class="gallery-card">
+          <div class="gallery-photo">
+            <img src="assets/img/knits/crochet-crossbag.jpg" alt="Blue and white checkered crochet shoulder bag, worn" width="720" height="960" loading="lazy">
+          </div>
+          <div class="gallery-info">
+            <span class="gallery-kind">Crochet</span>
+            <h3 class="gallery-name">Crochet Crossbag</h3>
+            <p class="gallery-detail">Cotton blend · Two colors</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
+  <!-- ================= BOOKS ================= -->
+  <section id="books" class="section">
+    <h2 class="section-title">Books</h2>
+    <div class="section-body">
+      <p>I read mostly Chinese non-fiction. I keep track of everything I read, along with reviews, on Goodreads.</p>
+      <div class="btn-row" style="margin-top:1.5rem">
+        <a class="btn" href="https://www.goodreads.com/user/show/91863962-natania">Read my reviews on Goodreads&nbsp;↗</a>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <div class="page">
-    <a href="index.html" style="color:inherit">← Back to research</a>
-    &nbsp;·&nbsp; Last updated May 2026
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span><a href="index.html" style="color:inherit">← Back to research</a> · Last updated November 2026</span>
+    <ul class="footer-links">
+      <li><a href="mailto:nataniaw@stanford.edu">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/natania-wong-496703186/">LinkedIn</a></li>
+      <li><a href="https://github.com/nataniawww">GitHub</a></li>
+    </ul>
   </div>
 </footer>
-
 </body>
 </html>

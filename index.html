@@ -1,290 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Natania Wong</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink: #1a1a18;
-      --paper: #f5f2eb;
-      --accent: #114971;
-      --muted: #7a7568;
-      --rule: #d8d4cb;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-      --mono: 'DM Mono', monospace;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natania Wong · Stanford Digital Economy Lab</title>
+  <meta name="description" content="Natania Wong is a Predoctoral Research Fellow at the Stanford Digital Economy Lab studying how generative AI is reshaping the labor market.">
+  <link rel="canonical" href="https://nataniawww.github.io/">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-      font-size: 16px;
-    }
+  <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Natania Wong">
+  <meta property="og:description" content="Predoctoral Research Fellow at the Stanford Digital Economy Lab studying AI and the labor market.">
+  <meta property="og:url" content="https://nataniawww.github.io/">
+  <meta property="og:image" content="https://nataniawww.github.io/assets/img/headshot.jpg">
+  <meta name="twitter:card" content="summary">
 
-    .page { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--paper);
-      border-bottom: 1px solid var(--rule);
-      padding: 1rem 0;
-    }
-    nav .inner {
-      max-width: 780px; margin: 0 auto; padding: 0 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .nav-name {
-      font-family: var(--serif); font-size: 1.1rem;
-      color: var(--ink); text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--muted); text-decoration: none;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-links a.fun-link {
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 0.25rem 0.6rem;
-      border-radius: 2px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .nav-links a.fun-link:hover { background: var(--accent); color: var(--paper); }
-
-    /* HERO */
-    header {
-      padding: 6rem 0 4rem;
-      border-bottom: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem; align-items: start;
-    }
-    .eyebrow {
-      font-family: var(--mono); font-size: 0.75rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 1rem;
-    }
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      line-height: 1.1; font-weight: 400; margin-bottom: 1.2rem;
-    }
-    .tagline {
-      font-size: 1.05rem; color: var(--muted);
-      max-width: 480px; margin-bottom: 2rem;
-    }
-    .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .contact-links a {
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--ink); text-decoration: none;
-      border: 1px solid var(--rule); padding: 0.4rem 0.9rem;
-      border-radius: 2px; transition: border-color 0.2s, color 0.2s;
-    }
-    .contact-links a:hover { border-color: var(--accent); color: var(--accent); }
-    .avatar {
-      width: 130px; height: 130px; border-radius: 50%;
-      background: var(--rule); overflow: hidden; flex-shrink: 0;
-      border: 3px solid var(--paper); outline: 1px solid var(--rule);
-    }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .avatar-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 2.5rem; color: var(--muted);
-    }
-
-    /* SECTIONS */
-    section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
-    section:last-child { border-bottom: none; }
-    h2 {
-      font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
-      margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.75rem;
-    }
-    h2::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-
-    .about-text p { margin-bottom: 1rem; color: #333; }
-    .about-text p:last-child { margin-bottom: 0; }
-
-    .interests { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .tag {
-      font-family: var(--mono); font-size: 0.75rem;
-      background: white; border: 1px solid var(--rule);
-      padding: 0.35rem 0.8rem; border-radius: 2px;
-      color: var(--ink); letter-spacing: 0.03em;
-    }
-
-    .pub-list { display: flex; flex-direction: column; gap: 1.6rem; }
-    .pub { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; }
-    .pub-year { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); padding-top: 0.2rem; min-width: 42px; }
-    .pub-title { font-weight: 500; font-size: 0.95rem; margin-bottom: 0.2rem; }
-    .pub-venue { font-size: 0.85rem; color: var(--muted); font-style: italic; }
-    .pub-links { margin-top: 0.4rem; display: flex; gap: 0.8rem; }
-    .pub-links a {
-      font-family: var(--mono); font-size: 0.72rem;
-      color: var(--accent); text-decoration: none;
-      text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .pub-links a:hover { text-decoration: underline; }
-
-    .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .exp { display: grid; grid-template-columns: 1fr auto; gap: 1rem; }
-    .exp-role { font-weight: 500; font-size: 0.95rem; }
-    .exp-org { color: var(--muted); font-size: 0.88rem; }
-    .exp-date { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); white-space: nowrap; padding-top: 0.2rem; }
-
-    footer {
-      padding: 2.5rem 0; text-align: center;
-      font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .page > *, header > * { animation: fadeUp 0.6s ease both; }
-    header .hero-text { animation-delay: 0.05s; }
-    header .avatar    { animation-delay: 0.15s; }
-    section           { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
-
-    @media (max-width: 600px) {
-      header { grid-template-columns: 1fr; }
-      .avatar { width: 90px; height: 90px; order: -1; }
-      .nav-links { gap: 1.2rem; }
-    }
-  </style>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<nav>
-  <div class="inner">
-    <a class="nav-name" href="index.html">Natania Wong</a>
+<!-- Icon set: reference with <svg><use href="#i-name"/></svg> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="brand-full">Natania Wong</span><span class="brand-short">NW</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Papers</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="fun.html" class="fun-link">Fun stuffs!</a></li>
+      <li><a class="nav-pill" href="fun.html">Fun</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="page">
+<main id="main" class="container">
 
-  <header>
-    <div class="hero-text">
-      <h1>Natania<br><em>Wong</em></h1>
-      <p class="tagline">
-        Hi there! I am a Predoctoral Research Fellow at the Stanford Digital Economy Lab (DEL), Human-Centered Artificial Intelligence (HAI) and jointly with the Stanford Institute for Economic Policy Research (SIEPR), where I work with
-        <a href="#" style="color:var(--accent);text-decoration:none;">Professor Erik Brynjolfsson</a>
-        and <a href="#" style="color:var(--accent);text-decoration:none;">Professor Sarah Bana</a>.
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="reveal">
+      <p class="eyebrow">Predoctoral Research Fellow · Stanford</p>
+      <h1>Natania <em>Wong</em></h1>
+      <p class="lead">
+        I'm a Predoctoral Research Fellow at the Stanford Digital Economy Lab, where I work with
+        <a href="https://digitaleconomy.stanford.edu/people/erik-brynjolfsson/">Erik Brynjolfsson</a> and
+        <a href="https://digitaleconomy.stanford.edu/people/sarah-bana/">Sarah Bana</a>.
+        I study how generative AI is reshaping the labor market.
       </p>
-      <div class="contact-links">
-        <a href="mailto:nataniaw@stanford.edu">✉ Email</a>
-        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
-        <a href="https://github.com/nataniawww" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/natania-wong-496703186/" target="_blank">LinkedIn</a>
-        <a href="cv.pdf" target="_blank">CV (PDF)</a>
+      <p class="affiliations">
+        <a href="https://digitaleconomy.stanford.edu/">Digital Economy Lab</a><span class="sep">·</span><a href="https://hai.stanford.edu/">Stanford HAI</a><span class="sep">·</span><a href="https://siepr.stanford.edu/">SIEPR</a>
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="mailto:nataniaw@stanford.edu"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/natania-wong-496703186/"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/nataniawww"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+        <!-- To add your CV: put the PDF at files/cv.pdf, then uncomment this line.
+        <a class="btn" href="files/cv.pdf"><svg aria-hidden="true"><use href="#i-file"/></svg>CV</a>
+        -->
+        <!-- To add Google Scholar once you have a profile: replace the URL and uncomment.
+        <a class="btn" href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+        -->
       </div>
     </div>
-    <div class="avatar">
-      <div class="avatar-placeholder"><img src="headshot.JPG" alt="Natania Wong"></div>
+    <div class="portrait reveal reveal-2">
+      <img src="assets/img/headshot.jpg" alt="Portrait of Natania Wong" width="960" height="1200">
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About</h2>
-    <div class="about-text">
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section reveal reveal-3">
+    <h2 class="section-title">About</h2>
+    <div class="section-body">
       <p>
-        I am a pre-doctoral fellow at Stanford Digital Economy Lab. I study how the rapid adoption of generative AI technologies is reshaping the labor market — from shifts in skill demand and changes in employment and earnings, to the evolving nature of where and how people work.
-        My research focuses on identifying who benefits, who is left behind, and how policy can support workers during periods of technological change.
+        My research examines how the rapid adoption of generative AI is reshaping work, from shifts in
+        skill demand and changes in employment and earnings to the evolving nature of where and how people
+        work. I'm especially interested in who benefits, who is left behind, and how policy can support
+        workers through periods of technological change.
       </p>
       <p>
-        I graduated with honors in Economics and minor in Data Science from the University of California, Berkeley. My research focuses on how AI adoption alters the labor market landscape, with a particular interest in labor economics, inequality, and public policy.
+        I graduated with honors from the University of California, Berkeley, with a degree in Economics
+        and a minor in Data Science. Before Stanford, I was a research assistant for
+        <a href="https://irle.berkeley.edu/people/michael-reich/">Professor Michael Reich</a> at Berkeley's
+        Institute for Research on Labor and Employment (IRLE), studying the effects of minimum wage policy.
+        Earlier, I wrote my senior honors thesis on the social mobility of first-generation immigrants using a
+        Blinder–Oaxaca decomposition, and worked on local policy research at the San Diego County
+        Taxpayers Association.
       </p>
       <p>
-        Before my predoctoral program, I was a research assistant for Professor Michael Reich in UC Berkeley's Institute for Research on Labor and Employment (IRLE), where I explored minimum wage effects.
-        Before my time at IRLE, I worked on my senior honors thesis on first-generation immigrants' social mobility with Blinder-Oaxaca Decomposition. I also spent time at San Diego Taxpayers Association working on local policy research.
-      </p>
-      <p>
-        When I'm not working with data, I'm probably knitting, reading, or watching the Premier League.
-        For book recommendations, visit <a href="https://www.goodreads.com/user/show/91863962-natania" style="color:var(--accent)">my Goodreads</a>.
-        For my knits and other fun things, see my <a href="fun.html" style="color:var(--accent)">fun page →</a>
+        Outside of research, I'm probably knitting, reading, or watching the Premier League. You can find
+        my book reviews on <a href="https://www.goodreads.com/user/show/91863962-natania">Goodreads</a> and
+        my knits on the <a href="fun.html">fun page&nbsp;→</a>
       </p>
     </div>
   </section>
 
-  <!-- RESEARCH INTERESTS -->
-  <section id="research">
-    <h2>Research Interests</h2>
-    <div class="interests">
-      <span class="tag">Labor Economics</span>
-      <span class="tag">Public Economics</span>
-      <span class="tag">AI and Economics</span>
-      <span class="tag">Machine Learning in Economics</span>
-    </div>
-  </section>
+  <!-- ================= RESEARCH ================= -->
+  <section id="research" class="section">
+    <h2 class="section-title">Research</h2>
+    <div class="section-body">
+      <ul class="tags" aria-label="Research interests">
+        <li class="tag">Labor Economics</li>
+        <li class="tag">Public Economics</li>
+        <li class="tag">AI and Economics</li>
+        <li class="tag">Machine Learning in Economics</li>
+      </ul>
 
-  <!-- PUBLICATIONS -->
-  <section id="publications">
-    <h2>Publications</h2>
-    <div class="pub-list">
-      <p style="font-size:0.9rem; color:var(--muted); font-style:italic;">Working papers coming soon.</p>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="exp-list">
-      <div class="exp">
-        <div>
-          <div class="exp-role">Predoctoral Research Fellow</div>
-          <div class="exp-org">Stanford Digital Economy Lab (DEL) · HAI · SIEPR</div>
-        </div>
-        <div class="exp-date">2025 – Present</div>
-      </div>
-      <div class="exp">
-        <div>
-          <div class="exp-role">Research Assistant</div>
-          <div class="exp-org">Institute for Research on Labor and Employment (IRLE), UC Berkeley</div>
-        </div>
-        <div class="exp-date">Sept 2024 – June 2025</div>
-      </div>
-      <div class="exp">
-        <div>
-          <div class="exp-role">Policy Analyst Intern</div>
-          <div class="exp-org">San Diego County Taxpayers Association</div>
-        </div>
-        <div class="exp-date">Summer 2024</div>
-      </div>
-      <div class="exp">
-        <div>
-          <div class="exp-role">Teaching Assistant — Introduction to Statistics</div>
-          <div class="exp-org">Department of Statistics, University of California, Berkeley</div>
-        </div>
-        <div class="exp-date">Fall 2022 – Spring 2023</div>
+      <!-- When you have papers, replace this note with a list, e.g.:
+      <ul class="timeline">
+        <li class="timeline-item">
+          <div>
+            <div class="timeline-role">Paper title</div>
+            <div class="timeline-org">with Coauthor Name · <a href="files/paper.pdf">PDF</a></div>
+          </div>
+          <div class="timeline-date">2026</div>
+        </li>
+      </ul>
+      -->
+      <div class="note">
+        <span class="eyebrow">Work in progress</span>
+        <p>Working papers coming soon.</p>
       </div>
     </div>
   </section>
 
-</div>
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="section-body">
+      <ul class="timeline">
+        <li class="timeline-item">
+          <div>
+            <div class="timeline-role">Predoctoral Research Fellow</div>
+            <div class="timeline-org">Stanford Digital Economy Lab · HAI · SIEPR</div>
+          </div>
+          <div class="timeline-date">2025 – Present</div>
+        </li>
+        <li class="timeline-item">
+          <div>
+            <div class="timeline-role">Research Assistant</div>
+            <div class="timeline-org">Institute for Research on Labor and Employment, UC Berkeley</div>
+          </div>
+          <div class="timeline-date">Sep 2024 – Jun 2025</div>
+        </li>
+        <li class="timeline-item">
+          <div>
+            <div class="timeline-role">Policy Analyst Intern</div>
+            <div class="timeline-org"><a href="https://sdtaxpayers.org/">San Diego County Taxpayers Association</a></div>
+          </div>
+          <div class="timeline-date">Summer 2024</div>
+        </li>
+        <li class="timeline-item">
+          <div>
+            <div class="timeline-role">Teaching Assistant, Introduction to Statistics</div>
+            <div class="timeline-org">Department of Statistics, UC Berkeley</div>
+          </div>
+          <div class="timeline-date">Fall 2022 – Spring 2023</div>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-<footer>
-  <div class="page">
-    Last updated May 2026 &nbsp;·&nbsp;
-    Hosted on <a href="https://pages.github.com" style="color:inherit">GitHub Pages</a>
+  <!-- ================= EDUCATION ================= -->
+  <section id="education" class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="section-body">
+      <ul class="timeline">
+        <li class="timeline-item">
+          <div>
+            <div class="timeline-role">B.A. Economics with Honors, Minor in Data Science</div>
+            <div class="timeline-org">University of California, Berkeley</div>
+          </div>
+          <div class="timeline-date">2024</div>
+          <p class="timeline-desc">
+            Honors thesis: social mobility of first-generation immigrants, using a Blinder–Oaxaca decomposition.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Natania Wong · Last updated November 2026</span>
+    <ul class="footer-links">
+      <li><a href="mailto:nataniaw@stanford.edu">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/natania-wong-496703186/">LinkedIn</a></li>
+      <li><a href="https://github.com/nataniawww">GitHub</a></li>
+    </ul>
   </div>
 </footer>
 
