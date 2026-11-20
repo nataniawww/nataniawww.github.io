@@ -245,6 +245,96 @@ h1, h2, h3 { color: var(--ink); font-weight: 600; letter-spacing: -.02em; line-h
 .gallery h3 { font-size: 1rem; margin-top: .85rem; }
 .gallery p { font-size: .85rem; color: var(--muted); }
 
+/* Hover a project: its photo grows and the rest fade back, like the bookshelf */
+.gallery li { position: relative; }
+.gallery img { transition: transform .45s cubic-bezier(.2, .8, .3, 1), opacity .45s, filter .45s, box-shadow .45s; }
+@media (hover: hover) {
+  .gallery li:hover { z-index: 1; }
+  .gallery li:hover img { transform: translateY(-6px) scale(1.08); box-shadow: 0 22px 40px -18px rgba(0, 0, 0, .5); }
+  .gallery:has(li:hover) li:not(:hover) img { opacity: .45; filter: grayscale(.7); }
+}
+
+/* Section heading with controls on the right */
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 1rem; margin-bottom: 1rem; }
+.head-actions { display: flex; align-items: center; gap: .75rem; }
+
+/* ---------- Bookshelf: Goodreads covers in a sideways strip (filled by main.js) ---------- */
+.shelf-wrap {
+  --cover-w: 120px; --cover-h: 180px; --shelf-gap: 1rem;
+  --shelf-pad: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter)));
+  display: none; margin-block: .25rem .5rem;
+}
+.js .shelf-wrap { display: block; }
+.section:has(.shelf-wrap) { padding-bottom: 1.5rem; }   /* the caption's reserved space does that job */
+
+.shelf {
+  list-style: none; position: relative;
+  display: flex; gap: var(--shelf-gap);
+  min-height: calc(var(--cover-h) + 4.75rem);
+  padding-block: 2.5rem 2.25rem;          /* room for the enlarged cover and its shadow */
+  padding-inline: var(--shelf-pad);       /* first cover lines up with the text */
+  scroll-padding-inline: var(--shelf-pad);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent);
+}
+.shelf::-webkit-scrollbar { display: none; }
+
+/* Placeholder covers while Goodreads loads */
+.shelf:empty {
+  background: repeating-linear-gradient(90deg, var(--line) 0 var(--cover-w), transparent 0 calc(var(--cover-w) + var(--shelf-gap))) content-box;
+  animation: shelf-pulse 1.4s ease-in-out infinite;
+}
+@keyframes shelf-pulse { 50% { opacity: .5; } }
+
+.book {
+  flex: none; position: relative; transform-origin: 50% 65%;
+  transition: transform .4s cubic-bezier(.2, .8, .3, 1);
+}
+.book a {
+  display: block; position: relative; overflow: hidden;
+  width: var(--cover-w); height: var(--cover-h);
+  border-radius: 3px 5px 5px 3px; background: var(--line);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 6px 14px -6px rgba(0, 0, 0, .25);
+  transition: opacity .4s, filter .4s, box-shadow .4s;
+}
+.book a::after {                           /* spine crease + edge, so covers read as books */
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .2), rgba(255, 255, 255, .16) 3px, transparent 8px);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
+}
+.book img { width: 100%; height: 100%; object-fit: cover; }
+.book-blank {                              /* for books without a cover on Goodreads */
+  display: grid; place-items: center; height: 100%; padding: .75rem;
+  font-size: .8rem; line-height: 1.35; text-align: center; color: var(--ink-2);
+}
+
+/* One cover in focus: it grows and the rest fade back */
+.book.is-active { z-index: 1; transform: translateY(-6px) scale(1.25); }
+.book.is-active a { box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .5); }
+.shelf.has-active .book:not(.is-active) a { opacity: .45; filter: grayscale(.7); }
+
+.shelf-caption { min-height: 6rem; max-width: 40rem; font-size: .875rem; line-height: 1.6; color: var(--muted); }
+.shelf-caption .cap-title { display: block; font-size: 1rem; font-weight: 500; color: var(--ink); }
+.shelf-caption .cap-review {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  margin-top: .2rem;
+}
+.stars { margin-left: .35rem; letter-spacing: .08em; color: color-mix(in srgb, var(--muted) 40%, transparent); }
+.stars b { font-weight: inherit; color: var(--accent); }
+
+.shelf-nav { display: flex; gap: .35rem; }
+.shelf-nav[hidden] { display: none; }
+.shelf-nav .icon-btn { border: 1px solid var(--line); }
+.icon-btn:disabled { opacity: .35; pointer-events: none; }
+
+/* Touch screens: swipe, and the cover in the middle is the one in focus */
+@media (hover: none) {
+  .shelf { scroll-snap-type: x mandatory; padding-inline: calc(50% - var(--cover-w) / 2); }
+  .book { scroll-snap-align: center; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line); padding: 2rem 0 2.5rem; font-size: .85rem; color: var(--muted); }
 .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
@@ -283,5 +373,6 @@ h1, h2, h3 { color: var(--ink); font-weight: 600; letter-spacing: -.02em; line-h
   .portrait { order: -1; width: 140px; }
   .about { grid-template-columns: 1fr; }
   .projects { grid-template-columns: 1fr; }
+  .shelf-wrap { --cover-w: 100px; --cover-h: 150px; --shelf-gap: .85rem; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
